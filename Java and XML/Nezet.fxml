@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1300.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.NezetController">
+	<children>
+		<BorderPane layoutX="148.0" layoutY="160.0" prefHeight="789.0" prefWidth="1119.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<center>
+				<SplitPane dividerPositions="0.534521158129176" orientation="VERTICAL" prefHeight="790.0" prefWidth="868.0" BorderPane.alignment="CENTER">
+					<items>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="464.0" prefWidth="882.0" style="-fx-background-color: #fff2e6;">
+							<children>
+                        <Pane prefHeight="477.0" prefWidth="1063.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+      								<Label contentDisplay="CENTER" layoutX="335.0" layoutY="44.0" text="Üdvözöljük szállodánkban !">
+      									<font>
+      										<Font name="Lucida Handwriting Italic" size="26.0" />
+      									</font>
+      								</Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="menuPane" prefHeight="477.0" prefWidth="1063.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <MenuBar fx:id="menuBar" prefHeight="25.0" prefWidth="1300.0">
+                                <menus>
+                                  <Menu mnemonicParsing="false" text="Menü">
+                                    <items>
+                                      <MenuItem fx:id="pdfConvert" mnemonicParsing="false" text="PDF konvertálás" />
+                                      <MenuItem mnemonicParsing="false" text="Kilépés" />
+                                    </items>
+                                  </Menu>
+                                  <Menu mnemonicParsing="false" text="Szobák">
+                                    <items>
+                                      <MenuItem mnemonicParsing="false" text="Szobák" />
+                                    </items>
+                                  </Menu>
+                                  <Menu mnemonicParsing="false" text="Konvertálás">
+                                    <items>
+                                      <MenuItem mnemonicParsing="false" text="Elérhetőség" />
+                                    </items>
+                                  </Menu>
+                                </menus>
+                              </MenuBar>
+                              <Button layoutX="907.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #4d3319;" text="Kapcsolat" textFill="WHITE">
+                                 <font>
+                                    <Font name="Lucida Handwriting Italic" size="14.0" />
+                                 </font>
+                              </Button>
+      								<ImageView fitHeight="293.0" fitWidth="532.0" layoutX="283.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+      									<image>
+      										<Image url="@../../images/hotel.jpg" />
+      									</image>
+      								</ImageView>
+                           </children>
+                        </Pane>
+							</children>
+						</AnchorPane>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="412.0" prefWidth="882.0">
+							<children>
+                        <Pane id="tablePane" fx:id="tablePane" prefHeight="409.0" prefWidth="1063.0" style="-fx-background-color: #fff2e6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+      								<TableView id="table" fx:id="table" layoutX="-1.0" prefHeight="374.0" prefWidth="1064.0" style="-fx-background-color: #fff2e6;">
+      									<columns>
+      										<TableColumn id="tID" fx:id="tID" prefWidth="100.0" text="ID" visible="false" />
+      										<TableColumn id="tVezeteknev" fx:id="tVezeteknev" prefWidth="118.0" text="Vezetéknév" />
+      										<TableColumn id="tKeresztnev" fx:id="tKeresztnev" prefWidth="118.0" text="Keresztnév" />
+      										<TableColumn id="tCim" fx:id="tCim" prefWidth="118.0" text="Cím" />
+      										<TableColumn id="tTelszam" fx:id="tTelszam" prefWidth="118.0" text="Elérhetőség " />
+      										<TableColumn id="tBejelentkezes" fx:id="tBejelentkezes" prefWidth="118.0" text="Bejelentkezés" />
+      										<TableColumn id="tKijelentkezes" fx:id="tKijelentkezes" prefWidth="118.0" text="Kijelentkezés" />
+      										<TableColumn id="tSzobaszam" fx:id="tSzobaszam" prefWidth="118.0" text="Szobaszám" />
+                                    <TableColumn id="tSzobatipus" fx:id="tSzobatipus" prefWidth="118.0" text="Szobatípus" />
+                                    <TableColumn id="tFo" fx:id="tFo" prefWidth="118.0" text="Fő" />
+      									</columns>
+      								</TableView>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="exportPane" prefHeight="368.0" prefWidth="1063.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TextArea editable="false" layoutX="386.0" layoutY="72.0" prefHeight="167.0" prefWidth="292.0" />
+                              <Button layoutX="498.0" layoutY="192.0" mnemonicParsing="false" onAction="#exportLista" text="Generálás" />
+                              <TextField fx:id="addPdf" layoutX="458.0" layoutY="143.0" />
+                              <Label layoutX="493.0" layoutY="106.0" text="PDF generátor" />
+                           </children>
+                        </Pane>
+                        <Pane id="singlePane" fx:id="singlePane" prefHeight="368.0" prefWidth="1063.0" style="-fx-background-color: #fff2e6;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label layoutX="688.0" layoutY="14.0" text="Egyágyas szobáink">
+                                 <font>
+                                    <Font name="Lucida Handwriting Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="280.0" fitWidth="451.0" layoutX="27.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/single3.jpg" />
+                                 </image>
+                              </ImageView>
+                              <TextArea editable="false" layoutX="546.0" layoutY="54.0" prefHeight="283.0" prefWidth="475.0" style="-fx-background-color: #ffcc99;" text="Klasszikus stílusú, kényelmes szobáink, az Ön kényelmét hivatottak szolgálni. Berendezésével és finom uralkodó színeivel nyugalmat és békét sugároznak.&#10;A szállodai szobákból pazar kilátás nyílik a hotelt övező zöld területre.  &#10;Minden szállodai szoba kétágyas: vagy egy nagyméretű dupla ággyal, vagy két különálló ággyal felszerelt." wrapText="true">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </TextArea>
+                           </children>
+                        </Pane>
+                        <Pane id="doublePane" fx:id="doublePane" prefHeight="368.0" prefWidth="1063.0" style="-fx-background-color: #fff2e6;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fitHeight="286.0" fitWidth="422.0" layoutX="35.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/twobed2.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="701.0" layoutY="14.0" text="Kétágyas szobáink">
+                                 <font>
+                                    <Font name="Lucida Handwriting Italic" size="18.0" />
+                                 </font></Label>
+                              <TextArea editable="false" layoutX="538.0" layoutY="53.0" prefHeight="284.0" prefWidth="476.0" text="Klasszikus stílusú, kényelmes szobáink, az Ön kényelmét hivatottak szolgálni. Berendezésével és finom uralkodó színeivel nyugalmat és békét sugároznak.&#10;A szállodai szobákból pazar kilátás nyílik a hotelt övező zöld területre.  &#10;Minden szállodai szoba kétágyas: vagy egy nagyméretű dupla ággyal, vagy két különálló ággyal felszerelt." wrapText="true">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </TextArea>
+                           </children>
+                        </Pane>
+                        <Pane id="apartmentPane" fx:id="apartmentPane" prefHeight="368.0" prefWidth="1063.0" style="-fx-background-color: #fff2e6;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fitHeight="268.0" fitWidth="471.0" layoutX="35.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/apartment.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="737.0" layoutY="14.0" text="Apartman">
+                                 <font>
+                                    <Font name="Lucida Handwriting Italic" size="18.0" />
+                                 </font></Label>
+                              <TextArea editable="false" layoutX="517.0" layoutY="49.0" prefHeight="305.0" prefWidth="524.0" text="Apartmanjaink a kényeztetésre és kényelemre vágyó vendégeink számára biztosítanak tökéletes környezetet a pihenéshez. Az apartmanok bézs és pezsgő színeivel, extra méretű ággyal, modern, multifunkcionális pezsgőfürdővel felszerelt fürdőszobával rendelkeznek. A légkondicionált szobához tartozik továbbá: direkt hívásos telefon, minibár, bekészített törölköző, hajszárító, LCD TV, szobai internet és széf. A szobák egy részéhez erkély is tartozik. " wrapText="true">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </TextArea>
+                           </children>
+                        </Pane>
+							</children>
+						</AnchorPane>
+					</items>
+				</SplitPane>
+			</center>
+			<right>
+            <TabPane BorderPane.alignment="CENTER">
+               <tabs>
+                  <Tab closable="false" text="Hozzáad">
+                     <content>
+                  				<Pane prefHeight="789.0" prefWidth="248.0" style="-fx-background-color: #ffcc99;">
+                  					<children>
+                  						<TextField id="addVezeteknev" fx:id="addVezeteknev" layoutX="43.0" layoutY="60.0" />
+                  						<TextField id="addKeresztnev" fx:id="addKeresztnev" layoutX="43.0" layoutY="106.0" />
+                  						<TextField id="addCim" fx:id="addCim" layoutX="43.0" layoutY="151.0" />
+                              <TextField id="addBejelentkezes" fx:id="addBejelentkezes" layoutX="43.0" layoutY="245.0" />
+                              <TextField id="addKijelentkezes" fx:id="addKijelentkezes" layoutX="43.0" layoutY="295.0" />
+                  						<Label layoutX="43.0" layoutY="43.0" text="Vezetéknév" />
+                  						<Label layoutX="43.0" layoutY="90.0" text="Keresztnév" />
+                  						<Label layoutX="43.0" layoutY="134.0" text="Cím" />
+                  						<Label layoutX="43.0" layoutY="181.0" text="Elérhetőség" />
+                  						<Label layoutX="43.0" layoutY="227.0" text="Bejelentkezés" />
+                  						<Label layoutX="43.0" layoutY="274.0" text="Kijelentkezés" />
+                  						<Label layoutX="43.0" layoutY="369.0" text="Szobatípus" />
+                  						<Label layoutX="43.0" layoutY="325.0" text="Szobaszám" />
+                  						<Label layoutX="43.0" layoutY="417.0" text="Fő" />
+                              <ComboBox id="addSzobaszam" fx:id="addSzobaszam" layoutX="43.0" layoutY="342.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+                              <ComboBox id="addFo" fx:id="addFo" layoutX="43.0" layoutY="434.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+                              <ComboBox id="addSzobatipus" fx:id="addSzobatipus" layoutX="43.0" layoutY="389.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+                  						<Button layoutX="76.0" layoutY="502.0" mnemonicParsing="false" onAction="#addGuest" style="-fx-background-color: #4d3319;" text="Felvesz" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+                  							<font>
+                  								<Font name="Lucida Handwriting Italic" size="16.0" />
+                  							</font>
+                  						</Button>
+                              <Button layoutX="67.0" layoutY="559.0" mnemonicParsing="false" onAction="#editSzerkeszt" style="-fx-background-color: #4d3319;" text="Szerkeszt" textFill="WHITE">
+                                 <font>
+                                    <Font name="Lucida Handwriting Italic" size="16.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="addTelszam" layoutX="43.0" layoutY="198.0" />
+                              <TextField fx:id="search" layoutX="44.0" layoutY="625.0" promptText="Keresés" />
+                              <Button layoutX="50.0" layoutY="665.0" mnemonicParsing="false" onAction="#resetButton" style="-fx-background-color: #4d3319;" text="Visszaállítás" textFill="WHITE">
+                                 <font>
+                                    <Font name="Lucida Handwriting Italic" size="16.0" />
+                                 </font>
+                              </Button>
+                  					</children>
+                  				</Pane>
+                     </content>
+                  </Tab>
+                  <Tab closable="false" text="Szerkeszt">
+                     <content>
+                        <Pane prefHeight="789.0" prefWidth="235.0" style="-fx-background-color: #ffcc99;">
+                           <children>
+                              <TextField id="addVezeteknev" fx:id="editVezeteknev" layoutX="43.0" layoutY="60.0" />
+                              <TextField id="addKeresztnev" fx:id="editKeresztnev" layoutX="43.0" layoutY="106.0" />
+                              <TextField id="addCim" fx:id="editCim" layoutX="43.0" layoutY="151.0" />
+                              <TextField id="addTelszam" fx:id="editTelszam" layoutX="43.0" layoutY="198.0" />
+                              <Label layoutX="43.0" layoutY="43.0" text="Vezetéknév" />
+                              <Label layoutX="43.0" layoutY="90.0" text="Keresztnév" />
+                              <Label layoutX="43.0" layoutY="134.0" text="Cím" />
+                              <Label layoutX="43.0" layoutY="181.0" text="Elérhetőség" />
+                              <Label layoutX="43.0" layoutY="227.0" text="Bejelentkezés" />
+                              <Label layoutX="43.0" layoutY="274.0" text="Kijelentkezés" />
+                              <Label layoutX="43.0" layoutY="369.0" text="Szobatípus" />
+                              <Label layoutX="43.0" layoutY="325.0" text="Szobaszám" />
+                              <Label layoutX="43.0" layoutY="417.0" text="Fő" />
+                              <Button layoutX="76.0" layoutY="502.0" mnemonicParsing="false" onAction="#addGuest" style="-fx-background-color: #4d3319;" text="Felvesz" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+                                 <font>
+                                    <Font name="Lucida Handwriting Italic" size="16.0" />
+                                 </font>
+                              </Button>
+                              <ComboBox id="addSzobaszam" fx:id="editSzobaszam" layoutX="43.0" layoutY="342.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+                              <ComboBox id="addFo" fx:id="editFo" layoutX="43.0" layoutY="434.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+                              <ComboBox id="addSzobatipus" fx:id="editSzobatipus" layoutX="43.0" layoutY="389.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+                              <TextField id="addBejelentkezes" fx:id="editBejelentkezes" layoutX="43.0" layoutY="245.0" />
+                              <TextField id="addKijelentkezes" fx:id="editKijelentkezes" layoutX="43.0" layoutY="295.0" />
+                              <Button layoutX="67.0" layoutY="559.0" mnemonicParsing="false" onAction="#editSzerkeszt" style="-fx-background-color: #4d3319;" text="Szerkeszt" textFill="WHITE">
+                                 <font>
+                                    <Font name="Lucida Handwriting Italic" size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+			</right>
+		</BorderPane>
+	</children>
+</AnchorPane>
